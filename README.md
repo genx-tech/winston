@@ -1,5 +1,10 @@
 # winston
 
+forked from [winstonjs/winston](https://github.com/winstonjs/winston)
+
+* Add metaKey compatibility for legacy transporters.
+* Add switch to bypass regex matching of splat.  
+
 A logger for just about everything.
 
 [![Version npm](https://img.shields.io/npm/v/winston.svg?style=flat-square)](https://www.npmjs.com/package/winston)[![npm Downloads](https://img.shields.io/npm/dm/winston.svg?style=flat-square)](https://npmcharts.com/compare/winston?minimal=true)[![Build Status](https://img.shields.io/travis/winstonjs/winston/master.svg?style=flat-square)](https://travis-ci.org/winstonjs/winston)[![Dependencies](https://img.shields.io/david/winstonjs/winston.svg?style=flat-square)](https://david-dm.org/winstonjs/winston)

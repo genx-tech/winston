@@ -1,16 +1,17 @@
 {
   "name": "winston",
   "description": "A logger for just about everything.",
-  "version": "3.2.1",
+  "version": "3.2.1.sp",
   "author": "Charlie Robbins <charlie.robbins@gmail.com>",
   "maintainers": [
     "Jarrett Cruger <jcrugzz@gmail.com>",
     "Chris Alderson <chrisalderson@protonmail.com>",
-    "David Hyde <dabh@stanford.edu>"
+    "David Hyde <dabh@stanford.edu>",
+    "Rockie Guo <rockie@kitmi.com.au>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/winstonjs/winston.git"
+    "url": "https://github.com/kitmi/winston.git"
   },
   "keywords": [
     "winston",

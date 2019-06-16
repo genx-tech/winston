@@ -27,7 +27,8 @@ var helpers = exports;
  */
 helpers.createLogger = function (write, format) {
   return winston.createLogger({
-    format,
+    format,    
+    enableSplat: true,
     transports: [
       mockTransport.createMockTransport(write)
     ]

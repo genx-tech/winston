@@ -52,6 +52,8 @@ The recommended way to use `winston` is to create your own logger. The
 simplest way to do this is using `winston.createLogger`:
 
 ``` js
+const winston = require('winston');
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
@@ -122,12 +124,13 @@ from most important to least important._
 
 ``` js
 const levels = { 
-  error: 0, 
-  warn: 1, 
-  info: 2, 
-  verbose: 3, 
-  debug: 4, 
-  silly: 5 
+  error: 0,
+  warn: 1,
+  info: 2,
+  http: 3,
+  verbose: 4,
+  debug: 5,
+  silly: 6
 };
 ```
 

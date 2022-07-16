@@ -14,4 +14,3 @@ coverage/*
 *.sw*
 yarn.lock
 *.tgz
-dist/

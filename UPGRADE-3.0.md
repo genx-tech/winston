@@ -24,6 +24,8 @@
 - `winston.Logger` has been replaced with `winston.createLogger`.
 - `winston.setLevels` has been removed. Levels are frozen at the time of Logger creation.
 - Setting the level on the default `winston` logger no longer sets the level on the transports associated with the default `winston` logger.
+- The default logger exposed by `require('winston')` no longer has default `Console` transports, 
+and leaving it without transports may cause a high memory usage issue.
 
 ### Transports
 - `winston.transports.Memory` was removed. Use any Node.js `stream.Writeable` with a large `highWaterMark` instance instead.
@@ -39,7 +41,8 @@
     - `debugStdout` option has been removed.
 
 ### `winston.Container` and `winston.loggers`
-- `winston.Container` instances no longer have default `Console` transports
+- `winston.Container` instances no longer have default `Console` transports.
+Failing to add any transports may cause a high memory usage issue.
 - `winston.Container.prototype.add` no longer does crazy options parsing. Implementation inspired by [segmentio/winston-logger](https://github.com/segmentio/winston-logger/blob/master/lib/index.js#L20-L43)
 
 ### `winston.Logger`
@@ -71,7 +74,7 @@ logger.add(new winston.transports.Console());
 - `winston.Logger` will no longer do automatic splat interpolation by default.
   Be sure to use `format.splat()` to enable this functionality.
 - `winston.Logger` will no longer respond with an error when logging with no
-  transports
+  transports.
 - `winston.Logger` will no longer respond with an error if the same transports
   are added twice.
 - `Logger.prototype.stream`
@@ -107,7 +110,7 @@ now handled by **formats**.
 Custom formats can now be created with no changes to `winston` core.
 _We encourage you to consider a custom format before opening an issue._
 
-### Removed `winston.Logger` formatting options
+### Removed `winston.Logger` formatting options:
 - The default output format is now `format.json()`.
 - `filters`: Use a custom `format`. See: [Filters and Rewriters] below.
 - `rewriters`: Use a custom `format`. See: [Filters and Rewriters] below.
@@ -231,15 +234,15 @@ See [examples/format-mutate.js](/examples/format-mutate.js) for a complete
 end-to-end example that covers both filtering and rewriting behavior in
 `winston@2.x`.
 
-## Modularity: `winston-transport`, `logform` and more
+## Modularity: `winston-transport`, `logform` and more...
 
 As of `winston@3.0.0` the project has been broken out into a few modules:
 
 - [winston-transport]: `Transport` stream implementation & legacy `Transport`
   wrapper.
-- [logform]: All formats exports through `winston.format` 
+- [logform]: All formats exports through `winston.format`. 
 - `LEVEL` and `MESSAGE` symbols exposed through [triple-beam].
-- [Shared test suite][abstract-winston-transport] for community transports 
+- [Shared test suite][abstract-winston-transport] for community transports. 
 
 Let's dig in deeper. The example below has been annotated to demonstrate the different packages that compose the example itself:
 
